@@ -4,7 +4,7 @@
 # revision:
 #	v4.15.15
 ###########################################################
-from defs import *
+from .defs import *
 nl80211_commands2str = {
 	CMD_UNSPEC: "NL80211_CMD_UNSPEC",
 	CMD_GET_WIPHY: "NL80211_CMD_GET_WIPHY",

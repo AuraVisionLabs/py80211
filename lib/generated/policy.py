@@ -5,7 +5,7 @@
 #	v4.15.15
 ###########################################################
 from netlink.capi import *
-from defs import *
+from .defs import *
 
 NLA_NUL_STRING = NLA_NESTED + 2
 NLA_BINARY = NLA_NESTED + 3
