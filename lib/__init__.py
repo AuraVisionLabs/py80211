@@ -15,5 +15,5 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
-from generated.defs import *
-from generated import strmap
+from py80211.generated.defs import *
+from py80211.generated import strmap

@@ -180,4 +180,3 @@ class bss_info(object):
 		if nl80211.BSS_SIGNAL_MBM in self._bss.attrs:
 			s += '\n Signal: %d dBm' % (self._bss.attrs[nl80211.BSS_SIGNAL_MBM] / 100)
 		return s
-

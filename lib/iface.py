@@ -24,9 +24,9 @@ from netlink.capi import nlmsg_hdr, NL_SKIP, nla_get_u64, nla_put_u64, NL_CB_DEF
 from netlink.core import NLM_F_REQUEST, NLM_F_ACK, NLM_F_DUMP
 from netlink.genl.capi import py_genlmsg_parse
 
-import generated.defs as nl80211
+import py80211.generated.defs as nl80211
 
-from generated.policy import nl80211_policy
+from py80211.generated.policy import nl80211_policy
 from base import *
 import factory
 
@@ -69,5 +69,5 @@ class interface_list(custom_handler):
 			return NL_SKIP
 		except Exception as e:
 			(t,v,tb) = sys.exc_info()
-			print v.message
+			print(v.message)
 			traceback.print_tb(tb)

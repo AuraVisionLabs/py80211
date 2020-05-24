@@ -9,4 +9,4 @@ rh.add_ssids(['Ziggo'])
 err = rh.send()
 if err == 0:
 	for bss in bss_list(ifidx):
-		print str(bss_info(bss))
+		print(str(bss_info(bss)))

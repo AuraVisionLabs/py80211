@@ -115,7 +115,7 @@ def dump_enum(out, enum):
 		elif isinstance(e.children()[0][1], c_ast.BinaryOp):
 			dump_binary_op(out, e, e.children()[0][1])
 		else:
-			print e.children()[0][1]
+			print(e.children()[0][1])
 
 def dump_enum2str(out, count, enum):
 	list = enum.children()[0][1]
@@ -286,4 +286,3 @@ if __name__ == "__main__":
 		run(args.srcdir, args.destdir)
 	except SystemExit:
 		sys.stderr.write('Aborting..!!\n')
-

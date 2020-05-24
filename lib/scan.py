@@ -29,9 +29,9 @@ from netlink.capi import (nla_policy_array, NLA_U64, NLA_U32, NLA_U16, NLA_U8,
 from netlink.core import NLM_F_REQUEST, NLM_F_ACK, NLM_F_DUMP
 from netlink.genl.capi import genlmsg_hdr, py_genlmsg_parse
 
-import generated.defs as nl80211
+import py80211.generated.defs as nl80211
 
-from generated.policy import nl80211_policy
+from py80211.generated.policy import nl80211_policy
 from base import *
 import factory
 
@@ -87,7 +87,7 @@ class bss_list(custom_handler):
 			self._bss.append(factory.get_inst().create(bss, nattrs, bss_policy))
 		except Exception as e:
 			(t,v,tb) = sys.exc_info()
-			print v.message
+			print(v.message)
 			traceback.print_tb(tb)
 		return NL_SKIP
 

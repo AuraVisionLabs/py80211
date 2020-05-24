@@ -36,8 +36,8 @@ from netlink.genl.capi import (genlmsg_hdr, genl_ctrl_resolve, py_genlmsg_parse,
 			       genlmsg_put, genl_ctrl_resolve_grp)
 from netlink.core import (NETLINK_GENERIC, NLM_F_REQUEST, NLM_F_ACK)
 
-import generated.defs as nl80211
-from generated import strmap
+import py80211.generated.defs as nl80211
+from py80211.generated import strmap
 import factory
 
 NLA_NUL_STRING = NLA_NESTED + 2
@@ -99,7 +99,7 @@ class access80211(object):
                         return NL_SKIP
                 except Exception as e:
                         (t,v,tb) = sys.exc_info()
-                        print v.message
+                        print(v.message)
                         traceback.print_tb(tb)
 
 		pass
@@ -366,7 +366,7 @@ class nl80211_object(object):
 				if hasattr(pol, 'signed') and pol.signed:
 					self._attrs[aid] = self.convert_sign(self._attrs[aid], pol)
 			except Exception as e:
-				print e.message
+				print(e.message)
 				self._attrs[aid] = nla_data(attrs[aid])
 		self.post_store_attrs(attrs)
 
@@ -420,7 +420,7 @@ class nl80211_managed_object(nl80211_object, custom_handler):
 			return NL_SKIP
 		except Exception as e:
 			(t,v,tb) = sys.exc_info()
-			print v.message
+			print(v.message)
 			traceback.print_tb(tb)
 
 class nl80211_cmd_base(custom_handler):
@@ -449,4 +449,3 @@ class nl80211_cmd_base(custom_handler):
 		self._prepare_cmd()
 		self._add_attrs()
 		return self._access.send(self._nl_msg, self)
-
